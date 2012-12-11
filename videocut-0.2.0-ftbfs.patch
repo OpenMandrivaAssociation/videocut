@@ -1,0 +1,14 @@
+diff -MRB videocut-0.2.0.orig/src/TPreviewPanel/TPreviewPanel.cpp videocut-0.2.0/src/TPreviewPanel/TPreviewPanel.cpp
+--- src/TPreviewPanel/TPreviewPanel.cpp
++++ src/TPreviewPanel/TPreviewPanel.cpp
+@@ -167,7 +167,9 @@
+ 
+ void TPreviewPanel::adjustItems()
+ {
+-	backgroundRect->setSize(&QRectF(0, 0, 1, 1));
++	QRectF myRect(0, 0, 1, 1);
++	backgroundRect->setSize(&myRect);
++
+ 	logo->setSize(QRect(0, 0, 1, 1));
+ 	
+ 	// adjust meta text

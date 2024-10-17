@@ -7,7 +7,7 @@ Version:		%{version}
 Release:		%{release}
 License:		GPLv2
 Group:		Video
-Url:		http://code.google.com/p/videocut/
+Url:		https://code.google.com/p/videocut/
 Source:		%{name}-%{version}.tar.gz
 Patch1:		videocut-strcmp-0.2.0.patch
 Patch2:		videocut-0.2.0-ftbfs.patch

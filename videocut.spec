@@ -11,6 +11,7 @@ Url:		https://code.google.com/p/videocut/
 Source:		%{name}-%{version}.tar.gz
 Patch1:		videocut-strcmp-0.2.0.patch
 Patch2:		videocut-0.2.0-ftbfs.patch
+BuildRequires:	make
 BuildRequires:	qt4-devel 
 BuildRequires:	pkgconfig(libxine)
 

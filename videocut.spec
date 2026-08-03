@@ -1,5 +1,5 @@
 %define name videocut
-%define version 0.2.0
+%define version 3.2.0
 %define release 2
 
 Name:		%{name}
@@ -7,10 +7,10 @@ Version:		%{version}
 Release:		%{release}
 License:		GPLv2
 Group:		Video
-Url:		https://code.google.com/p/videocut/
+Url:		https://github.com/kanehekili/VideoCut
 Source:		%{name}-%{version}.tar.gz
-Patch1:		videocut-strcmp-0.2.0.patch
-Patch2:		videocut-0.2.0-ftbfs.patch
+Patch1:		videocut-strcmp-3.2.0.patch
+Patch2:		videocut-3.2.0-ftbfs.patch
 BuildRequires:	make
 BuildRequires:	qt4-devel 
 BuildRequires:	pkgconfig(libxine)
@@ -22,9 +22,9 @@ VideoCut is an open source desktop application specialized
 for creating compositions of screenshots from video files.
 
 %prep
-%setup -qn %{name}-%{version}.orig
-%patch1 -p1
-%patch2 -p0
+%setup -q
+%patch -P1 -p1
+%patch -P2 -p1
 
 %build
 qmake

@@ -1,0 +1,21 @@
+--- a/ffmpeg/src/makefile
++++ b/ffmpeg/src/makefile
+@@ -4,6 +4,7 @@
+ all: ./../bin/remux5
+ 
+ ./../bin/remux5: remux5
++	mkdir -p $(dir $@)
+ 	cp $< $@
+ 
+ dev: CFLAGS += -g -fanalyzer
+--- a/ffmpeg/src/remux5.c
++++ b/ffmpeg/src/remux5.c
+@@ -863,7 +863,7 @@
+ 	return data[4]==0xC0; //legacy fallback for packets without start code alignment
+ }
+ 
+-static inline int h264Check(const uint8_t * const data){
++static inline int __attribute__((unused)) h264Check(const uint8_t * const data){
+ 	/*
+ 	 * This works for h264 and AVC, not for TS! TS seems to use data[5] for detection.
+ 	 * Did not find any mention of that field, but test show that the nals are identical.
